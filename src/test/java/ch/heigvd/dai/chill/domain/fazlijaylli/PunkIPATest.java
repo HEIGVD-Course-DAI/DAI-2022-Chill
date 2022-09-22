@@ -1,4 +1,4 @@
-package ch.heigvd.dai.chill.domain.wasadigi;
+package ch.heigvd.dai.chill.domain.fazlijaylli;
 
 import ch.heigvd.dai.chill.domain.Bartender;
 import ch.heigvd.dai.chill.protocol.OrderRequest;
@@ -21,7 +21,7 @@ class PunkIPATest {
   @Test
   void aBartenderShouldAcceptAnOrderForPunkIPA() {
     Bartender jane = new Bartender();
-    String productName = "ch.heigvd.dai.chill.domain.wasadigi.PunkIPA";
+    String productName = "ch.heigvd.dai.chill.domain.fazlijaylli.PunkIPA";
     OrderRequest request = new OrderRequest(3, productName);
     OrderResponse response = jane.order(request);
     BigDecimal expectedTotalPrice = PunkIPA.PRICE.multiply(new BigDecimal(3));
