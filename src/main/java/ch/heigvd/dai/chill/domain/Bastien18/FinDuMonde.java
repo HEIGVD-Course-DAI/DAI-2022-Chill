@@ -1,4 +1,4 @@
-package ch.heigvd.dai.chill.domain.wasadigi;
+package ch.heigvd.dai.chill.domain.Bastien18;
 
 import ch.heigvd.dai.chill.domain.IProduct;
 
