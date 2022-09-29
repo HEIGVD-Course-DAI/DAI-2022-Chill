@@ -39,7 +39,6 @@ Here is an example of a unit test that students have to write:
 ```java
 package ch.heigvd.dai.chill.domain.wasadigi;
 
-import ch.heigvd.dai.chill.domain.Bartender;
 import ch.heigvd.dai.chill.protocol.OrderRequest;
 import ch.heigvd.dai.chill.protocol.OrderResponse;
 import org.junit.jupiter.api.Test;
@@ -50,22 +49,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BoxerTest {
 
-  @Test
-  void thePriceAndNameForPunkIPAShouldBeCorrect() {
-    Boxer beer = new Boxer();
-    assertEquals(beer.getName(), Boxer.NAME);
-    assertEquals(beer.getPrice(), Boxer.PRICE);
-  }
+    @Test
+    void thePriceAndNameForPunkIPAShouldBeCorrect() {
+        Boxer beer = new Boxer();
+        assertEquals(beer.getName(), Boxer.NAME);
+        assertEquals(beer.getPrice(), Boxer.PRICE);
+    }
 
-  @Test
-  void aBartenderShouldAcceptAnOrderForBoxer() {
-    Bartender jane = new Bartender();
-    String productName = "ch.heigvd.dai.chill.domain.wasadigi.Boxer";
-    OrderRequest request = new OrderRequest(3, productName);
-    OrderResponse response = jane.order(request);
-    BigDecimal expectedTotalPrice = Boxer.PRICE.multiply(new BigDecimal(3));
-    assertEquals(expectedTotalPrice, response.getTotalPrice());
-  }
+    @Test
+    void aBartenderShouldAcceptAnOrderForBoxer() {
+        Bartender jane = new Bartender();
+        String productName = "ch.heigvd.dai.chill.domain.wasadigi.Boxer";
+        OrderRequest request = new OrderRequest(3, productName);
+        OrderResponse response = jane.order(request);
+        BigDecimal expectedTotalPrice = Boxer.PRICE.multiply(new BigDecimal(3));
+        assertEquals(expectedTotalPrice, response.getTotalPrice());
+    }
 
 }
 ```
@@ -75,24 +74,22 @@ Here is an example of the production class exercised by the test:
 ```java
 package ch.heigvd.dai.chill.domain.wasadigi;
 
-import ch.heigvd.dai.chill.domain.IProduct;
-
 import java.math.BigDecimal;
 
 public class Boxer implements IProduct {
 
-  public final static String NAME = "Boxer";
-  public final static BigDecimal PRICE = new BigDecimal(2.0);
+    public final static String NAME = "Boxer";
+    public final static BigDecimal PRICE = new BigDecimal(2.0);
 
-  @Override
-  public String getName() {
-    return NAME;
-  }
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
-  @Override
-  public BigDecimal getPrice() {
-    return PRICE;
-  }
+    @Override
+    public BigDecimal getPrice() {
+        return PRICE;
+    }
 }
 ```
 
