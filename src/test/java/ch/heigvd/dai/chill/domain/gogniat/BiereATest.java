@@ -9,22 +9,22 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class MortSubiteTest {
+class BiereATest {
 
   @Test
-  void thePriceAndNameForMortSubiteShouldBeCorrect() {
-    MortSubite beer = new MortSubite();
-    assertEquals(beer.getName(), MortSubite.NAME);
-    assertEquals(beer.getPrice(), MortSubite.PRICE);
+  void thePriceAndNameForBiereAShouldBeCorrect() {
+    BiereA beer = new BiereA();
+    assertEquals(beer.getName(), BiereA.NAME);
+    assertEquals(beer.getPrice(), BiereA.PRICE);
   }
 
   @Test
-  void aBartenderShouldAcceptAnOrderForMortSubite() {
+  void aBartenderShouldAcceptAnOrderForBiereA() {
     Bartender jane = new Bartender();
-    String productName = "ch.heigvd.dai.chill.domain.gogniat.MortSubite";
+    String productName = "ch.heigvd.dai.chill.domain.gogniat.BiereA";
     OrderRequest request = new OrderRequest(3, productName);
     OrderResponse response = jane.order(request);
-    BigDecimal expectedTotalPrice = MortSubite.PRICE.multiply(new BigDecimal(3));
+    BigDecimal expectedTotalPrice = BiereA.PRICE.multiply(new BigDecimal(3));
     assertEquals(expectedTotalPrice, response.getTotalPrice());
   }
 
